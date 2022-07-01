@@ -10,7 +10,7 @@
 
 ## <a name="OverviewProject"></a>Overview of Project
 
-[[1]](#1) [[2]](#2)[[3]](#3)
+Alphabet Soup, a fictional company that funds different charities, wants to analyze the data of  grants they have given in the past to different charities [[5]](#5) in order to predict in the future if different charities will use their grants successfully. For this project we will use neural networks to build the needed model. Our first model we used predicted the success of the test data with around 72% accuracy [[1]](#1)[[2]](#2). Since we were looking for 75% accuracy or higher, we optimized the model to improve its accuracy [[3]](#3)[[4]](#4). 
 
 ## <a name="Results"></a>Results
 
