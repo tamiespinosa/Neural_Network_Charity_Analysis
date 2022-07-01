@@ -100,7 +100,13 @@ The last desicion made was to not delete the EIN and NAME column and do a value 
 
 ## <a name="Summary"></a> Summary
 
-  
+We ran two neural network models with the goal of achieving more than 75% accuracy in predicting which charities would use their grants succesfully. Our first model achieved 72.78% accuracy, where as our last model achieved 75.8% accuracy. 
+
+The main learning from this model was to double check the value of a column before getting rid of it. The NAME column, which was deleted at first as it was considered an ID, proved to be the column that best improved the performance of the model. The second conclusion is that to achieved a desired accuracy the model will have to be ran numerous times in order to fine tune it. 
+
+The final learning is that the first model ran with only 5 neurons and achieved a fairly high accuracy. The improvement made by the large increase in neurons did not cause a huge increase in accuracy. Ultimately the NAME column change proved to be what improved the model the most. 
+
+Alternative, we could've run the Random Forrest model that is robust at predicting binary option results. This model does not use as much computing power as neural networks do, and has simpler code. 
 
 ## <a name="Resources"></a>Resources
 
