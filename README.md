@@ -19,15 +19,36 @@ Alphabet Soup, a fictional company that funds different charities, has data of  
   * What variable(s) are considered the target(s) for your model?
   
   The column "IS_SUCCESSFUL" was considered to be the target for our model. A value of 1 is assumed to mean the grant was used successfully and a value of 0 is assumed to have not. 
+    - **IS_SUCCESSFUL**—Was the money used effectively
+
   
   * What variable(s) are considered to be the features for your model?
-  
+
+For our original model we used the following columns as features:  
+    - **APPLICATION_TYPE**—Alphabet Soup application type
+    - **AFFILIATION**—Affiliated sector of industry
+    - **CLASSIFICATION**—Government organization classification
+    - **USE_CASE**—Use case for funding
+    - **ORGANIZATION**—Organization type
+    - **STATUS**—Active status
+    - **INCOME_AMT**—Income classification
+    - **SPECIAL_CONSIDERATIONS**—Special consideration for application
+    - **ASK_AMT**—Funding amount requested
+    
+Of those we reduced the number of unique entries by reclassifying some in a 'Other' category for the CLASSIFICATION column and for the APPLICATION_TYPE column.
+
+For the optimized model we indluded the NAME column in addition to the features used for the original model. We reclassified the ASK_AMT and the NAME column. We played with the threshold used to determine the 'Other' category for the CLASSIFICATION column and for the APPLICATION_TYPE to get better accuracy. 
   
   * What variable(s) are neither targets nor features, and should be removed from the input data?
   
-  In our original model we removed both the NAME and the EIN, as we considered them to be IDs. Yet, as we looked into the data further we saw that some of the names of the organizations had been given a significant amount of grants, therefore making this valuable information to analyze. 
+  In our original model we removed both the NAME and the EIN, as we considered them to be IDs. 
+    - **EIN** and **NAME**—Identification columns
   
-  Of the 34,299 data entries there were 19,568 organizations. Of those, 18,776 only received one grant. We binned all those into one category, and then we organized some of the remaining ones based on buckets of number of grants they recived. We did this in order to reduce the 19,568 unique entries for the NAME column, into 13 unique names. We left all the organizations that received more than 400 grants as unique entries. 
+  In our optimized model we deleted the 'SPECIAL_CONSIDERATIONS_N' column as by having the 'SPECIAL_CONSIDERATIONS_Y' after the 'SPECIAL_CONSIDERATIONS' column was encoded, the data for special considerations is already covered. 
+  
+  In this model we also deleted the EIN column. When we looked further at the ID assumptions we made in the original model, we saw that some of the names of the organizations had been given a significant amount of grants, therefore making this valuable information to analyze. 
+  
+  Of the 34,299 data entries there were 19,568 NAME organizations. Of those, 18,776 only received one grant. We binned all those into one category, and then we organized some of the remaining ones based on buckets of number of grants they recived. We did this in order to reduce the 19,568 unique entries for the NAME column, into 13 unique names. We left all the organizations that received more than 400 grants as unique entries. 
   
 ### <a name="Compiling"></a>Compiling, Training and Evaluating the Model
 
