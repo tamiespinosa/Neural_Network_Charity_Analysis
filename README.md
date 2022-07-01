@@ -17,8 +17,17 @@ Alphabet Soup, a fictional company that funds different charities, has data of  
 ### <a name="DataProcessing"></a>Data Processing
 
   * What variable(s) are considered the target(s) for your model?
+  
+  The column "IS_SUCCESSFUL" was considered to be the target for our model. A value of 1 is assumed to mean the grant was used successfully and a value of 0 is assumed to have not. 
+  
   * What variable(s) are considered to be the features for your model?
+  
+  
   * What variable(s) are neither targets nor features, and should be removed from the input data?
+  
+  In our original model we removed both the NAME and the EIN, as we considered them to be IDs. Yet, as we looked into the data further we saw that some of the names of the organizations had been given a significant amount of grants, therefore making this valuable information to analyze. 
+  
+  Of the 34,299 data entries there were 19,568 organizations. Of those, 18,776 only received one grant. We binned all those into one category, and then we organized some of the remaining ones based on buckets of number of grants they recived. We did this in order to reduce the 19,568 unique entries for the NAME column, into 13 unique names. We left all the organizations that received more than 400 grants as unique entries. 
   
 ### <a name="Compiling"></a>Compiling, Training and Evaluating the Model
 
